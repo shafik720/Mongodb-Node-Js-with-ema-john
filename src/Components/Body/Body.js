@@ -10,11 +10,11 @@ const Body = () => {
 
     let [products, setProducts] = useProducts();
 
-    const [pageCount, setPageCount] = useState(0);
+    const[pageCount, setPageCount] = useState(0);
     const[pageSelect, setPageSelect] = useState(0);
+    const[productCount, setProductCount] = useState(10);
     function currentPage(index){
         setPageSelect(index);
-        console.log(index);
     }
 
     useEffect(() => {
@@ -88,6 +88,14 @@ const Body = () => {
                     className = {index == pageSelect ? 'selected' : ''}
                 >{index}</button>)
             }
+            <p className="py-3">Show Product : 
+                <select className='px-2 mx-3' onChange={e=>setProductCount(e.target.value)}>
+                    <option value="5">5</option>
+                    <option value="10" selected>10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                </select>
+             </p>
             </div>
         </div>
     );
