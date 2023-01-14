@@ -14,19 +14,19 @@ const Body = () => {
     let [cart, setCart] = useState([]);
     function handleCart(selectedProduct){
         let newCart = [];
-        let exist = cart.find(product=> product.id === selectedProduct.id);
+        let exist = cart.find(product=> product._id === selectedProduct._id);
         if(!exist){
             selectedProduct.quantity = 1;
             newCart = [...cart, selectedProduct];
         }else{
             exist.quantity = exist.quantity + 1;
-            let restProduct = cart.filter(product=>product.id !== selectedProduct.id);
+            let restProduct = cart.filter(product=>product._id !== selectedProduct._id);
 
             newCart = [...restProduct, exist];
         }
 
         setCart(newCart);
-        addToDb(selectedProduct.id);
+        addToDb(selectedProduct._id);
     }
 
     
@@ -34,7 +34,7 @@ const Body = () => {
         const  storedCart = getStoredCart();
         let freshCart = [];
         for(let productId in storedCart){
-            let addedProduct = products.find(product=> product.id === productId);
+            let addedProduct = products.find(product=> product._id === productId);
             
             if(addedProduct){
                 let quantity = storedCart[productId];
@@ -51,7 +51,7 @@ const Body = () => {
                 {
                     products.map(index=><Products 
                         index ={index}
-                        key = {index.id}
+                        key = {index._id}
                         handleCart = {handleCart}
                     ></Products>)
                 }

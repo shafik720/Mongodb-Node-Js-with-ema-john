@@ -12,14 +12,14 @@ const Orders = () => {
     let [cart, setCart] = useCart(products);
 
     function deleteOrders(element){        
-        removeFromDb(element.id); 
+        removeFromDb(element._id); 
         console.log(cart);
         
         // ----------------------
         const  storedCart = getStoredCart();
         let freshCart = [];
         for(let productId in storedCart){
-            let addedProduct = products.find(product=> product.id === productId);
+            let addedProduct = products.find(product=> product._id === productId);
             
             if(addedProduct){                
                 freshCart.push(addedProduct);
@@ -34,7 +34,7 @@ const Orders = () => {
                 {
                     cart.map(index=><MiniCards
                         index = {index}
-                        key = {index.id}
+                        key = {index._id}
                         deleteOrders={deleteOrders}
                     ></MiniCards>)
                 }
