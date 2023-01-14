@@ -74,8 +74,8 @@ const Body = () => {
                 </div>
 
             </div>
-            <div className="">
-                <h2>Total Page : </h2>
+            <div className="pageButtons text-center py-5">
+                <p>Total Page : </p>
             {
                 [...Array(pageCount).keys()].map(index=> <button>{index}</button>)
             }

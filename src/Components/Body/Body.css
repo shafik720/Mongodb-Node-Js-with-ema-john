@@ -17,3 +17,10 @@
     border-left: 2px solid darkblue;
     padding: 0 12px;
 }
+
+
+.pageButtons button{
+    outline: none;
+    border: none;
+    margin: 0 5px;
+}
