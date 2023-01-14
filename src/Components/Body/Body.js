@@ -9,6 +9,19 @@ const Body = () => {
 
     
     let [products, setProducts] = useProducts();
+
+    const[pageCount, setPageCount] = useState(0);
+    useEffect(()=>{
+        const url = `http://localhost:5000/productCount`;
+        fetch(url)
+        .then(res=>res.json())
+        .then(data=>{
+            // console.log(data);
+            const count = data.count;
+            const pages = Math.ceil(count/10);
+            setPageCount(pages);
+        })
+    },[])
     
 
     let [cart, setCart] = useState([]);
