@@ -85,7 +85,7 @@ const Body = () => {
             {
                 [...Array(pageCount). keys()].map(index=> <button
                     onClick={()=>currentPage(index)}
-                    // className = {pageCount == index ? 'selected' : ''}
+                    className = {index == pageSelect ? 'selected' : ''}
                 >{index}</button>)
             }
             </div>
