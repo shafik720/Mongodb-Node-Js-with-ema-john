@@ -24,3 +24,7 @@
     border: none;
     margin: 0 5px;
 }
+.pageButtons button.selected{
+    background: #007ACC;
+    color: white;
+}

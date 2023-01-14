@@ -11,6 +11,12 @@ const Body = () => {
     let [products, setProducts] = useProducts();
 
     const [pageCount, setPageCount] = useState(0);
+    const[pageSelect, setPageSelect] = useState(0);
+    function currentPage(index){
+        setPageSelect(index);
+        console.log(index);
+    }
+
     useEffect(() => {
         const url = `http://localhost:5000/productCount`;
         fetch(url)
@@ -77,7 +83,10 @@ const Body = () => {
             <div className="pageButtons text-center py-5">
                 <p>Total Page : </p>
             {
-                [...Array(pageCount). keys()].map(index=> <button>{index}</button>)
+                [...Array(pageCount). keys()].map(index=> <button
+                    onClick={()=>currentPage(index)}
+                    // className = {pageCount == index ? 'selected' : ''}
+                >{index}</button>)
             }
             </div>
         </div>
