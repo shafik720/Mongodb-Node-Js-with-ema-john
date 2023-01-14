@@ -6,16 +6,21 @@ import Products from '../Products/Products';
 import './Body.css'
 
 const Body = () => {
-
-
-    let [products, setProducts] = useProducts();
-
+    
     const[pageCount, setPageCount] = useState(0);
-    const[pageSelect, setPageSelect] = useState(0);
+    const[page, setPage] = useState(0);
     const[productCount, setProductCount] = useState(10);
     function currentPage(index){
-        setPageSelect(index);
+        setPage(index);
     }
+
+    const [products, setProducts] = useState([]);
+    useEffect(()=>{
+        fetch(`http://localhost:5000/allProducts?page=${page}&size=${productCount}`)
+        .then(res=>res.json())
+        .then(data=>setProducts(data))
+    },[page, productCount]);
+
 
     useEffect(() => {
         const url = `http://localhost:5000/productCount`;
@@ -85,7 +90,7 @@ const Body = () => {
             {
                 [...Array(pageCount). keys()].map(index=> <button
                     onClick={()=>currentPage(index)}
-                    className = {index == pageSelect ? 'selected' : ''}
+                    className = {index == page ? 'selected' : ''}
                 >{index}</button>)
             }
             <p className="py-3">Show Product : 
