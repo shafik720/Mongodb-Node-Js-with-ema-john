@@ -1,0 +1,19 @@
+
+
+.body-div{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+
+.body-left{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 50px;
+    gap: 20px;
+
+}
+
+.body-right{
+    border-left: 2px solid darkblue;
+    padding: 0 12px;
+}

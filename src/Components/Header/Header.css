@@ -1,0 +1,16 @@
+
+
+.header-div{
+    padding: 10px 50px;
+    background-color: darkblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.right-div a{
+    text-decoration: none;
+    margin: 0 15px;
+    color: white;
+    font-size: 18px;
+}

@@ -1,0 +1,87 @@
+
+
+
+.form-div{
+    border: 3px solid #00008B;
+    padding: 25px 25px 30px;
+    border-radius: 5px;
+    width: 70%;
+    margin: auto;
+}
+.form-div input{
+    width: 100%;
+    outline: none;
+    border: 2px solid #ccc;
+    margin: 0 0 15px 0;
+    height: 50px;
+    font-size: 18px;
+    padding: 0 15px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-div p{
+    margin: 15px 0 5px 0;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.form-div h2{
+    text-align: center;
+    font-size: 30px;
+    color: #00008B;
+    font-weight: 700;
+}
+
+.form-div button{
+    width: 100%;
+    margin-top: 20px;
+    height: 50px;
+    font-weight: 700;
+    font-size: 18px;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background: linear-gradient(45deg,  darkblue, #007ACC);
+    color: white;
+}
+.form-div h4{
+    text-align: center;
+    margin: 10px 0;
+}
+
+.googleButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    height: 60px;
+    cursor: pointer;
+}
+.googleButton h4{    
+    font-size: 18px ;
+}
+.googleButton:hover{
+    border: 3px solid grey;
+}
+.googleButton img{
+    width: 30px;
+    height: 30px;
+}
+
+.signUpText{
+    font-size: 18px !important;
+    text-align: center;
+}
+.signUpText a{
+    text-decoration: none;
+}
+
+
+@media only screen and (max-width:767px){
+    .form-div{
+        width: 95%;
+    }
+}
